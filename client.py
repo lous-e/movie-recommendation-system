@@ -9,10 +9,10 @@ def parse_arguments():
     parser = argparse.ArgumentParser(description="Movie Recommendation System")
     
     # Take in arguments for user description, top-n recommendations, and model type
-    parser.add_argument('--desc', type=str,required=True,help="User's input to describe preferred movie")
-    parser.add_argument('--topn', type=int, default=5, help = "Number of top recommendations to return (default is 5)")
-    parser.add_argument('--model', type=str, default='tfidf', choices=['tfidf'], help="Model to use for recommendations (default is tf-idf)")
-    parser.add_argument('--out', type=str, default='output', help="Output file name (default is output)")
+    parser.add_argument('--desc', type=str,required=True,help="User input describing preference")
+    parser.add_argument('--topn', type=int, default=5, help = "Number of top recommendations to return")
+    parser.add_argument('--model', type=str, default='tfidf', choices=['tfidf'], help="Model type for recommendations")
+    parser.add_argument('--out', type=str, default='output', help="Output file name (saved in outputs/)")
     
     args = parser.parse_args()
     return args.desc, args.topn, args.model, args.out
