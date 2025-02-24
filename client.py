@@ -11,7 +11,7 @@ def parse_arguments():
     # Take in arguments for user description, top-n recommendations, and model type
     parser.add_argument('--desc', type=str,required=True,help="User input describing preference")
     parser.add_argument('--topn', type=int, default=5, help = "Number of top recommendations to return")
-    parser.add_argument('--model', type=str, default='tfidf', choices=['tfidf', 'tfidf-lemmatized', 'tfidf-svd'], help="Model type for recommendations")
+    parser.add_argument('--model', type=str, default='tfidf', choices=['tfidf', 'tfidf-lemmatized', 'tfidf-svd', 'sbert'], help="Model type for recommendations")
     parser.add_argument('--out', type=str, default='output', help="Output file name (saved in outputs/)")
     
     args = parser.parse_args()
@@ -45,6 +45,9 @@ def main():
     # tfidf with svd
     elif model == "tfidf-svd":
         from models.tfidf_svd import recommend
+    # sentence encoding model
+    elif model == "sbert":
+        from models.sbert import recommend
     
     # get recommendations
     similarities, top_indices = recommend(desc, topn, overviews)
