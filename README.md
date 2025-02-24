@@ -33,8 +33,6 @@ We used a publically available dataset from Kaggle called the [TMDb 5000 Movie D
 git clone https://github.com/lous-e/movie-recommendation-system
 cd movie-recommendation-system
 ```
-
-
 ### Install dependencies
 Create a new virtual environment using any tool you prefer. We use venv for this example
 
