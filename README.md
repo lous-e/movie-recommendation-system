@@ -28,7 +28,7 @@ Create a new virtual environment using any tool you prefer. We use venv for this
 python -m venv venv
 venv/Scripts/activate
 ```
-#### Mac
+#### MacOS
 ```{bash}
 python3 -m venv venv
 source ./venv/bin/activate
@@ -36,6 +36,7 @@ source ./venv/bin/activate
 ### Install dependencies
 ```{bash}
 pip install -r requirements.txt
+python -m spacy download en_core_web_sm
 ```
 
 ## Usage
@@ -53,6 +54,8 @@ python client.py --desc "I like action movies set in space" --topn 5 --model tfi
 
 Currently, the following models are supported:
 - ```tfidf```: Returns the top-n movies sorted by descending order of [tf-idf](https://en.wikipedia.org/wiki/Tf%E2%80%93idf).
+- ```tfidf-lemmatized```: [Lemmatizes](https://en.wikipedia.org/wiki/Lemmatization) the words before tf-idf.
+- ```tfidf-svd```: Performs [SVD](https://en.wikipedia.org/wiki/Singular_value_decomposition) on tfidf matrices to reduce dimensionality.
 
 ### Outputs
 
