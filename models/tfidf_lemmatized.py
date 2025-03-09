@@ -6,9 +6,7 @@ import spacy
 def recommend(desc, topn, overviews):
     # preprocess (lemmatize)
     nlp = spacy.load(
-        "en_core_web_sm", enable=["tagger", 
-                                  "attribute_ruler", 
-                                  "lemmatizer"]
+        "en_core_web_sm", enable=["tagger", "attribute_ruler", "lemmatizer"]
     )
     lemmatize = lambda text: [
         " ".join([token.lemma_ for token in doc if not token.is_stop])

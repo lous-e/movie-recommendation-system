@@ -26,7 +26,7 @@ def parse_arguments():
     parser.add_argument(
         "--out", type=str, default="output", help="Output file name (saved in outputs/)"
     )
-    
+
     args = parser.parse_args()
     return args.desc, args.topn, args.model, args.out
 
